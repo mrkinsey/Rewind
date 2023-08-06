@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Michael Kinsey</title>
+    <title>Rewind: A Coding Project By Michael Kinsey</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
 <!-- Nav Section -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="./img/_(100 × 100 px).png" class="d-inline-block align-text-top" width="30" height="30" alt="">   APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="./img/_(100 × 100 px).png" class="d-inline-block align-text-top" width="30" height="30" alt="">   Rewind</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
                     <a class="nav-link active" aria-current="page" href="./code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/mrkinsey/Rewind">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="#">About</a>
@@ -52,16 +52,40 @@
     <!-- Main Section -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-4 mt-4">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME.</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for Rewind.</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Call Hello World
-function helloWorld(){
-    alert("Hello World!");
-}
-                        </code>
+                            // Get the string from the user
+                            // Controller function
+                            function getValue() {
+                                document.getElementById("alert").classList.add("invisible");
+                            
+                                let userString = document.getElementById("userString").value;
+                                let revString = reverseString(userString);
+                                displayString(revString);
+                            }
+                            
+                            // Reverse the string
+                            // Logic function
+                            function reverseString(userString) {
+                                let revString = [];
+                            
+                                for (let i = userString.length -1 ; i >= 0 ; i--) {
+                                    revString += userString[i];
+                                }
+                            
+                                return revString;
+                            }
+                            
+                            // Display the reversed string to the user
+                            // View function
+                            function displayString(revString) {
+                                document.getElementById("msg").innerHTML = `Your string reversed is: ${revString}`;
+                                
+                                document.getElementById("alert").classList.remove("invisible");
+                            }                        </code>
                     </pre>
                 </div>
 
